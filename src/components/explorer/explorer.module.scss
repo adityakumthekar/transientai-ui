@@ -1,4 +1,5 @@
-@import '../../assets/variables.scss';
+@use '../../assets/variables' as *;
+
 
 .explorer {
   flex: 1 1 auto;

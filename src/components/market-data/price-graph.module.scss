@@ -1,4 +1,5 @@
-@import '../../assets/variables.scss';
+@use '../../assets/variables' as *;
+
 
 .price-graph {
   display: flex;

@@ -1,4 +1,5 @@
-@import '../../assets/variables.scss';
+@use '../../assets/variables' as *;
+
 
 .chatbot-container {
   flex: 1 1 50%;

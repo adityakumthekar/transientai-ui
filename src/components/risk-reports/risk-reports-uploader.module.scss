@@ -1,4 +1,5 @@
-@import '../../assets/variables.scss';
+@use '../../assets/variables' as *;
+
 
 .risk-reports-container {
   display: flex;

@@ -1,4 +1,5 @@
-@import '../../assets/variables.scss';
+@use '../../assets/variables' as *;
+
 
 .term-sheets-container {
   display: flex;
