@@ -1,0 +1,113 @@
+@import '../../assets/variables';
+
+
+.file-uploader-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.wizard-step-content {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+  min-height: 350px;
+}
+
+.drop-zone {
+  border: 2px dashed $border-color;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  width: 400px;
+}
+
+.drop-zone.drag-active {
+  border-color: #666;
+  background-color: #797878;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.file-input-label {
+  color: white;
+  background-color: $gray-1000;
+  padding: 10px;
+  border-radius: 5px;
+  //width: 150px;
+  cursor: pointer;
+}
+
+.file-upload-step {
+  @extend .wizard-step-content;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+
+  .upload-area {
+    border: 1px dashed $border-color;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    @media screen and (max-width: $mobile-breakpoint-max) {
+      width: 100%;
+    }
+  }
+
+  button {
+    width: 130px;
+  }
+}
+
+.file-validation-step {
+  @extend .wizard-step-content;
+  height: 100%;
+
+  .grid {
+
+  }
+
+  button {
+    width: 130px;
+  }
+}
+
+.file-submission-step {
+  @extend .wizard-step-content;
+  height: 100%;
+
+  .upload-status {
+    display: flex;
+    flex: 2 1 80%;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+
+    span {
+      background-color: $green;
+      color: white;
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+  }
+
+  button {
+    width: 130px;
+  }
+}

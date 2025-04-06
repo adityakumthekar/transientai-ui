@@ -1,0 +1,56 @@
+@import '../../assets/variables.scss';
+
+.risk-reports-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 60%;
+  padding: 5px;
+  gap: 20px;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    flex-direction: column;
+    flex: 1 1 100%;
+  }
+}
+
+.risk-reports-documents {
+  display: flex;
+  padding: 5px;
+  gap: 40px;
+  flex: 1 1 50%;
+  flex-direction: column;
+}
+
+.risk-reports-uploader {
+  display: flex;
+  padding: 5px;
+  gap: 20px;
+  flex-direction: column;
+  flex: 1 1 50%;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+.reports-grid {
+  flex: 1 1 50%;
+}
+
+.risk-reports-preview-container {
+  display: flex;
+  flex: 1 1 60%;
+}
+
+.risk-reports-preview {
+  padding: 0 10px 0 50px;
+  height: calc(100vh - 300px);
+  border-radius: 10px;
+  width: 100%;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    padding: 0;
+    height: calc(100vh - 200px);
+  }
+}

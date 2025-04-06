@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+.wizard-steps {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    gap: 5px;
+  }
+
+  .step-title {
+
+  }
+
+  .step-number {
+    background-color: transparent;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    align-content: center;
+    border: 1px solid $border-color;
+
+    &.active {
+      background-color: $teal-100;
+      color: $white;
+    }
+  }
+
+  .step-separator {
+    width: 150px;
+    height: 1px;
+    margin: 0 10px;
+    background-color: $border-color;
+
+    @media screen and (max-width: $mobile-breakpoint-max) {
+      width: 30px;
+    }
+  }
+}

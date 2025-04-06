@@ -1,0 +1,23 @@
+// todo.. ideally we should use it from tailwind, get it working and remove this file
+@import '../assets/variables.scss';
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-13 {
+  font-size: 13px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-15 {
+  font-size: 14px;
+}
+
+.fa-remove {
+  color: $red;
+  font-size: 18px;
+}

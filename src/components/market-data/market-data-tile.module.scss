@@ -1,0 +1,137 @@
+@import '../../assets/variables.scss';
+
+.tile {
+  border: 1px solid $border-color;
+  border-radius: 5px;
+  gap: 10px;
+  padding: 10px;
+  height: calc(100vh - 450px);
+  width: 500px;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    width: calc(100vw - 35px);
+    height: 750px;
+    vertical-align: center;
+  }
+}
+
+.remove-panel {
+  display: flex;
+  width: 100%;
+  height: 5px;
+  position: relative;
+}
+
+.remove-button {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+.price-summary-table {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0 10px 5px;
+}
+
+.price-graph {
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    width: 100%;
+  }
+}
+
+.financial-details {
+}
+
+.financial-details-table {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0px 10px 5px;
+}
+
+.price-graph-title {
+  font-size: 16px;
+  color: $white;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  border-bottom: 1px solid $border-color;
+  padding: 5px 0;
+}
+
+.company-details {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 5px 0px 5px 5px;
+
+  .logo {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.details  {
+  display: flex;
+  flex-direction: column;
+}
+
+.company-name {
+  font-size: 12px;
+}
+
+.current-price-info {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  padding-left: 5px;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    padding-left: 5px;
+  }
+}
+
+.current-price-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.current-price {
+  font-size: 35px;
+  font-weight: bolder;
+  line-height: 35px;
+  height: 35px;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    font-size: 35px;
+    line-height: 30px;
+    height: 30px;
+  }
+}
+
+.price-change {
+  color: $white;
+  font-size: 14px;
+  font-weight: bold;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    font-size: 12px;
+  }
+}
+
+.price-change-positive {
+  @extend .price-change;
+  color: $green;
+}
+
+.price-change-negative {
+  @extend .price-change;
+  color: $red;
+}
+
+.price-timestamp {
+  font-size: 11px;
+  padding-top: 5px;
+}

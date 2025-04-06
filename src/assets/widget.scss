@@ -1,0 +1,95 @@
+@import './variables.scss';
+
+.widget {
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: $font-color-100; 
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    font-size: 13px;
+  }
+
+  &.expanded {
+    position: fixed;
+    background-color: $body-bg;
+    z-index: 100;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.widget-title {
+  display: flex;
+  align-items: center;
+
+}
+
+.toggler {
+  margin-left: auto;
+  cursor: pointer;
+  color: $font-color-200;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.search-bar {
+  display: flex;
+  background-color: $body-bg;
+  align-items: center;
+  padding: 10px;
+
+  @media screen and (max-width: $mobile-breakpoint-max) {
+    padding: 10px 0px;
+  }
+
+  .title {
+    flex: 1 1 40%;
+    font-size: 15px;
+
+    @media screen and (max-width: $mobile-breakpoint-max) {
+      display: none;
+    }
+  }
+
+  .search-toolbar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    input {
+      width: 150px;
+    }
+
+    @media screen and (max-width: $mobile-breakpoint-max) {
+      flex: 1 1 100%;
+      padding: 10px 0px;
+      
+      input {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  }
+
+  i {
+    opacity: .5;
+    cursor: pointer;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+}
+
+.summary-title {
+  padding: 5px;
+  text-align: center;
+  background-color: $body-bg;
+  font-size: 14px;
+  color: $white;
+}
