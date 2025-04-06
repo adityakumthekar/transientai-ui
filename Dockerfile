@@ -12,11 +12,13 @@ RUN apt-get update && apt-get install -y \
   librsvg2-dev \
   && rm -rf /var/lib/apt/lists/*
 
-# Copy dependency files and install
+# Copy dependency files and install dependencies
 COPY package*.json ./
-RUN npm install
 
-# Copy the rest of the code and build
+# ⚠️ Force canvas to build from source if needed
+RUN npm install --build-from-source=canvas
+
+# Copy app code and build
 COPY . .
 RUN npm run build
 
@@ -34,7 +36,7 @@ RUN apt-get update && apt-get install -y \
   && rm -rf /var/lib/apt/lists/*
 
 # Copy build output and node_modules from builder stage
-COPY --from=builder /app ./
+COPY --from=builder /app ./ 
 
 EXPOSE 8080
 ENV PORT 8080
