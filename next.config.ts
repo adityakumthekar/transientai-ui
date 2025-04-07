@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   experimental: {
-    serverActions: {}
+    serverActions: {},
   },
   reactStrictMode: false,
   eslint: {
@@ -24,6 +24,8 @@ const nextConfig: NextConfig = {
       config.externals = config.externals || [];
       config.externals.push("canvas");
     } else {
+      config.resolve = config.resolve || {};
+      config.resolve.alias = config.resolve.alias || {};
       config.resolve.alias['canvas'] = false;
     }
 
