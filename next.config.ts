@@ -19,8 +19,11 @@ const nextConfig: NextConfig = {
       use: 'ignore-loader',
     });
 
-    // Prevent bundling native canvas on server
+    // Prevent bundling native canvas module depending on the environment
     if (isServer) {
+      config.externals = config.externals || [];
+      config.externals.push("canvas");
+    } else {
       config.resolve.alias['canvas'] = false;
     }
 
