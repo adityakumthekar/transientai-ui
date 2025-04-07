@@ -2,21 +2,14 @@
 FROM node:18-bullseye AS builder
 WORKDIR /app
 
-# Install build tools for canvas
-RUN apt-get update && apt-get install -y \
-  build-essential \
-  libcairo2-dev \
-  libpango1.0-dev \
-  libjpeg-dev \
-  libgif-dev \
-  librsvg2-dev \
-  && rm -rf /var/lib/apt/lists/*
+# Skip canvas build tools entirely
 
 # Copy dependency files and install dependencies
 COPY package*.json ./
 
-# ⚠️ Force canvas to build from source if needed
-RUN npm install --build-from-source=canvas
+# Skip optional deps like canvas
+ENV npm_config_optional=false
+RUN npm ci
 
 # Copy app code and build
 COPY . .
@@ -26,14 +19,7 @@ RUN npm run build
 FROM node:18-slim
 WORKDIR /app
 
-# Install runtime dependencies for canvas
-RUN apt-get update && apt-get install -y \
-  libcairo2 \
-  libpango-1.0-0 \
-  libjpeg62-turbo \
-  libgif7 \
-  librsvg2-2 \
-  && rm -rf /var/lib/apt/lists/*
+# No canvas runtime deps needed either
 
 # Copy build output and node_modules from builder stage
 COPY --from=builder /app ./ 
