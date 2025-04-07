@@ -10,6 +10,9 @@
 !.yarn/releases
 !.yarn/versions
 
+# allow patch-package to work
+!patches/
+
 # testing
 /coverage
 
