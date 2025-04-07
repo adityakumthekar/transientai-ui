@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
   experimental: {
-    serverActions: {},
+    serverActions: {}
   },
   reactStrictMode: false,
   eslint: {
@@ -19,14 +19,9 @@ const nextConfig: NextConfig = {
       use: 'ignore-loader',
     });
 
-    // Prevent bundling native canvas module depending on the environment
+    // Prevent bundling native canvas on server
     if (isServer) {
-      config.externals = config.externals || [];
-      config.externals.push("canvas");
-    } else {
-      config.resolve = config.resolve || {};
-      config.resolve.alias = config.resolve.alias || {};
-      config.resolve.alias['canvas'] = false;
+      config.externals.push({ canvas: 'commonjs canvas' });
     }
 
     return config;
