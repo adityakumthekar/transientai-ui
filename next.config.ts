@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
 
     // Prevent bundling native canvas on server
     if (isServer) {
-      config.externals.push({ canvas: 'commonjs canvas' });
+      config.resolve.alias['canvas'] = false;
     }
 
     return config;
